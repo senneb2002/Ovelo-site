@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ovelo - See how your day felt</title>
+    <meta name="description"
+        content="Ovelo reads the body language of your workday to generate a simple Day Trace and AI reflection. Privacy-first focus insights.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lora:ital@0;1&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span class="text-gradient">Ovelo</span>
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#features" class="nav-link">Features</a></li>
+                    <li><a href="#download" class="nav-link">Download</a></li>
+                    <li><a href="#faq" class="nav-link">FAQ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title">The AI that knows your focus<br><span class="text-gradient">better than you
+                    do.</span></h1>
+            <p class="hero-subtitle">
+                Ovelo learns from you. It studies where you lose focus, when you gain it, and how you work—then tells
+                you the truth about your day.
+            </p>
+            <div class="hero-buttons">
+                <a href="https://github.com/senneb2002/ovelo/releases" id="download-btn"
+                    class="btn btn-primary btn-download">
+                    <svg class="windows-logo" viewBox="0 0 88 88" width="24" height="24">
+                        <rect x="0" y="0" width="40" height="40" fill="currentColor" />
+                        <rect x="48" y="0" width="40" height="40" fill="currentColor" />
+                        <rect x="0" y="48" width="40" height="40" fill="currentColor" />
+                        <rect x="48" y="48" width="40" height="40" fill="currentColor" />
+                    </svg>
+                    <span class="download-text">Download for Windows</span>
+                </a>
+                <a href="https://github.com/senneb2002/ovelo" target="_blank" class="btn btn-secondary">View on
+                    GitHub</a>
+            </div>
+
+            <div class="hero-image-container">
+                <img src="hero-screenshot.png" alt="Ovelo Dashboard Screenshot" class="hero-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Example Reflection Section -->
+    <section class="reflection-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Honest AI Reflection</h2>
+                <p class="text-secondary">Choose your coach.</p>
+            </div>
+
+            <!-- Radio inputs for state management -->
+            <input type="radio" name="reflection-mode" id="mode-roast" value="roast" checked>
+            <input type="radio" name="reflection-mode" id="mode-calm" value="calm">
+            <input type="radio" name="reflection-mode" id="mode-scientist" value="scientist">
+            <input type="radio" name="reflection-mode" id="mode-nobs" value="nobs">
+            <input type="radio" name="reflection-mode" id="mode-ceo" value="ceo">
+
+            <div class="reflection-controls">
+                <div class="controls-wrapper">
+                    <label for="mode-roast" class="mode-toggle-label">🔥 Roast</label>
+                    <label for="mode-calm" class="mode-toggle-label">🍃 Calm</label>
+                    <label for="mode-scientist" class="mode-toggle-label">🔬 Scientist</label>
+                    <label for="mode-nobs" class="mode-toggle-label">🛑 No BS</label>
+                    <label for="mode-ceo" class="mode-toggle-label">💼 CEO</label>
+                </div>
+            </div>
+
+            <div class="reflection-card">
+                <!-- ROAST CONTENT -->
+                <div class="reflection-content" data-mode="roast">
+                    <div class="reflection-header">
+                        <span class="reflection-title"
+                            style="background: linear-gradient(135deg, #BE185D, #F43F5E); -webkit-background-clip: text; background-clip: text;">Daily
+                            Debacle 💀</span>
+                        <span class="reflection-date">Today at 7:02 PM</span>
+                    </div>
+                    <div class="reflection-body">
+                        <p>User, your focus today was as stable as a house of cards in a hurricane! 💀🌪️ You bounced
+                            around like a pinball with ADHD! 🤡</p>
+
+                        <h4 style="color: #F43F5E;">The "Productivity" Paradox 🗑️</h4>
+                        <p>Let's talk about those "productive" choices, shall we? You dipped into Financial News at
+                            10:31 AM, 11:04 AM, AND 6:48 PM like you're some high-roller, but let's be real, you're
+                            probably just checking if your imaginary stocks went up, right? 🤡💰 That's not
+                            "Antigravity," that's just avoiding actual work! 🚽</p>
+
+                        <p>And then, the ultimate self-sabotage: at 6:49 PM, you were actively scouring Productivity
+                            Forums to ask <em>"Why do I have days where I work 7 hours but feel like I got nothing
+                                done?"</em> 🥕 It's because you were busy asking about productivity instead of being
+                            productive! 💀</p>
+
+                        <h4 style="color: #F43F5E;">The Great Idle Escape 😴</h4>
+                        <p>Your day featured a legendary 2 hours of pure, unadulterated idleness between 1:55 PM and
+                            4:30 PM! 🚶‍♂️💨 Did your computer ascend to a higher plane of existence, or did you just
+                            decide a long nap was an "implementation plan"? 🛌</p>
+                    </div>
+                </div>
+
+                <!-- CALM CONTENT -->
+                <div class="reflection-content" data-mode="calm" style="display: none; opacity: 0;">
+                    <div class="reflection-header">
+                        <span class="reflection-title"
+                            style="background: linear-gradient(135deg, #059669, #34D399); -webkit-background-clip: text; background-clip: text;">Daily
+                            Insight 🍃</span>
+                        <span class="reflection-date">Today at 7:02 PM</span>
+                    </div>
+                    <div class="reflection-body">
+                        <p>Okay, User, let's take a calm look at today. It sounds like you're experiencing that familiar
+                            feeling of putting in time, but not quite seeing the tangible progress you'd hoped for.</p>
+
+                        <h4 style="color: #34D399;">Understanding the Patterns</h4>
+                        <p>I noticed that repeated checks on Financial News (10:31 AM, 11:04 AM, 6:48 PM) might have
+                            created small diversions. While quick mental breaks are helpful, frequent context switching
+                            can subtly pull energy away from your "Antigravity" project.</p>
+
+                        <p>It's also interesting that you were exploring productivity forums at 6:49 PM. This clearly
+                            shows your desire for improvement, but seeking external answers can sometimes become a
+                            distraction itself.</p>
+
+                        <h4 style="color: #34D399;">A Moment of Pause</h4>
+                        <p>There was a significant 2.5 hour period of low activity this afternoon. Was this a conscious
+                            rest, or a moment where focus was difficult? Your goal isn't to be a machine, but to align
+                            your efforts with your intentions. Let's approach tomorrow with curiosity, not judgment.</p>
+                    </div>
+                </div>
+
+                <!-- SCIENTIST CONTENT -->
+                <div class="reflection-content" data-mode="scientist" style="display: none; opacity: 0;">
+                    <div class="reflection-header">
+                        <span class="reflection-title"
+                            style="background: linear-gradient(135deg, #0284C7, #38BDF8); -webkit-background-clip: text; background-clip: text;">Lab
+                            Report 🔬</span>
+                        <span class="reflection-date">Today at 7:02 PM</span>
+                    </div>
+                    <div class="reflection-body">
+                        <p>Hello. Let's dissect the observable data points from your day with a detached, analytical
+                            lens. 1. <strong>Intermittent External Stimuli:</strong> Interactions with Financial News at
+                            10:31 AM, 11:04 AM, and 6:48 PM present as intermittent exogenous stimuli. Hypothesis: are
+                            these micro-breaks serving as genuine cognitive resets, or are they introducing noise into
+                            your attentional landscape?</p>
+
+                        <h4 style="color: #38BDF8;">Meta-Cognitive Inquiry</h4>
+                        <p>Your query at 6:49 PM regarding productivity efficiency is a fascinating data point. It
+                            indicates a strong internal drive for optimization. However, engaging in a search for
+                            solutions during the work period presents a temporal paradox. It's akin to analyzing the
+                            instructions for an experiment while the experimental apparatus sits idle.</p>
+
+                        <h4 style="color: #38BDF8;">Focused Interval Baseline</h4>
+                        <p>The 24-minute block of dedicated focus on "Antigravity" (11:03 AM - 11:27 AM) serves as a
+                            critical baseline positive data point. It demonstrates capacity for sustained attention. The
+                            challenge is to identify the environmental conditions that facilitated this focus for future
+                            replication.</p>
+                    </div>
+                </div>
+
+                <!-- NO BS CONTENT -->
+                <div class="reflection-content" data-mode="nobs" style="display: none; opacity: 0;">
+                    <div class="reflection-header">
+                        <span class="reflection-title"
+                            style="background: linear-gradient(135deg, #DC2626, #F87171); -webkit-background-clip: text; background-clip: text;">The
+                            Reality Check 🛑</span>
+                        <span class="reflection-date">Today at 7:02 PM</span>
+                    </div>
+                    <div class="reflection-body">
+                        <p>Alright. Let's cut the pleasantries and get to the data. Your observation regarding effort
+                            vs. output is a signal that your internal efficiency metrics are misaligned with your
+                            external reality. Good.</p>
+
+                        <h4 style="color: #F87171;">Attentional Disruptors</h4>
+                        <p>The checks at 10:31 AM, 11:04 AM, 6:48 PM are not "breaks"; they are attentional disruptors.
+                            Each instance requires disengagement and re-booting. You're incurring a cognitive overhead
+                            for each instance, fragmenting focus without demonstrably contributing to progress.</p>
+
+                        <h4 style="color: #F87171;">Meta-Work Displacement</h4>
+                        <p>Your 6:49 PM query is a prime example of meta-work displacement. You identified a problem and
+                            sought an external solution during production time. Operational inefficiency. It's akin to a
+                            programmer debugging the debugger. It demonstrates desire, but execution is
+                            counter-productive.</p>
+                    </div>
+                </div>
+
+                <!-- CEO CONTENT -->
+                <div class="reflection-content" data-mode="ceo" style="display: none; opacity: 0;">
+                    <div class="reflection-header">
+                        <span class="reflection-title"
+                            style="background: linear-gradient(135deg, #7C3AED, #A78BFA); -webkit-background-clip: text; background-clip: text;">Executive
+                            Brief 💼</span>
+                        <span class="reflection-date">Today at 7:02 PM</span>
+                    </div>
+                    <div class="reflection-body">
+                        <p>User, this is a solid analytical framework. You've correctly identified the critical friction
+                            points. Let's move from diagnosis to execution.</p>
+
+                        <h4 style="color: #A78BFA;">Hypothesis 1: Attentional Fragmentation</h4>
+                        <p><strong>Action Mandate:</strong> Implement a "no-fly zone" for external stimuli during
+                            primary deep work blocks. The "experiment" isn't optional; it's an operational imperative.
+                            We need hard numbers on throughput improvement, not just a "feeling better."</p>
+
+                        <h4 style="color: #A78BFA;">Hypothesis 3: Recovery ROI</h4>
+                        <p>An "unmanaged drift into low-value activities" is not recovery; it's waste. Your cognitive
+                            resources are your most valuable asset. <strong>Action Mandate:</strong> Structure your
+                            recovery. Treat it as an investment. Measure the ROI of structured breaks (e.g., non-digital
+                            mindfulness) on subsequent focus.</p>
+
+                        <p><em>No more subjective narrative; give me the numbers.</em></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Ovelo Learns</h2>
+                <p class="text-secondary">Understanding your workflow should be intuitive and private.</p>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <span class="feature-icon">🌊</span>
+                    <h3 class="feature-title">The Day Trace</h3>
+                    <p class="feature-desc">A visual "focus ribbon" representing your day's attention flow. See your
+                        Focus Peaks and Drift Zones as they actually happened.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="feature-icon">✨</span>
+                    <h3 class="feature-title">AI Reflection</h3>
+                    <p class="feature-desc">Get a daily narrative that describes how your day felt. Ovelo detects
+                        patterns you might miss yourself.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="feature-icon">🔒</span>
+                    <h3 class="feature-title">Privacy First</h3>
+                    <p class="feature-desc">Content-blind tracking. Ovelo measures <em>how</em> you work, not
+                        <em>what</em> you work on. No screenshots, no keystroke logging.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="feature-icon">🛂</span>
+                    <h3 class="feature-title">Ovelo Passport</h3>
+                    <p class="feature-desc">Generate a beautiful, shareable "focus passport" for social media that
+                        visualizes your attention orbit and daily stats.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Users Say</h2>
+                <p class="text-secondary">Real feedback from the Ovelo community</p>
+            </div>
+            <div class="review-grid">
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="stars">★★★★★</div>
+                        <span class="review-date">December 2024</span>
+                    </div>
+                    <p class="review-text">"I finally understand why I'm tired. The drift detection is spot on. Been
+                        using it for 2 weeks now and my productivity has noticeably improved."</p>
+                    <div class="review-author">
+                        <img src="https://i.pravatar.cc/48?img=12" alt="Jamie" class="author-avatar-img">
+                        <div class="author-info">
+                            <h5>Jamie L.</h5>
+                            <span>Software Developer • Verified User</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="stars">★★★★☆</div>
+                        <span class="review-date">November 2024</span>
+                    </div>
+                    <p class="review-text">"Privacy was my main concern. Ovelo tracking 'how' I type instead of 'what'
+                        is genius. Wish there was a macOS version though!"</p>
+                    <div class="review-author">
+                        <img src="https://i.pravatar.cc/48?img=5" alt="Sarah" class="author-avatar-img">
+                        <div class="author-info">
+                            <h5>Sarah M.</h5>
+                            <span>Freelance Writer • Verified User</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="stars">★★★★★</div>
+                        <span class="review-date">December 2024</span>
+                    </div>
+                    <p class="review-text">"The AI roasts are brutal but necessary. It keeps me honest about how I
+                        actually spend my time. The CEO mode is fire."</p>
+                    <div class="review-author">
+                        <img src="https://i.pravatar.cc/48?img=8" alt="David" class="author-avatar-img">
+                        <div class="author-info">
+                            <h5>David K.</h5>
+                            <span>CS Student • Verified User</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="review-cta">
+                <button id="write-review-btn" class="btn btn-secondary">✍️ Write a Review</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Review Modal -->
+    <div id="review-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" id="close-review-modal">&times;</button>
+            <h3>Share Your Experience</h3>
+            <form id="review-form">
+                <div class="form-group">
+                    <label for="review-name">Your Name</label>
+                    <input type="text" id="review-name" placeholder="John D." required>
+                </div>
+                <div class="form-group">
+                    <label for="review-role">Your Role</label>
+                    <input type="text" id="review-role" placeholder="Developer, Student, etc.">
+                </div>
+                <div class="form-group">
+                    <label>Rating</label>
+                    <div class="star-rating">
+                        <input type="radio" name="rating" value="5" id="star5"><label for="star5">★</label>
+                        <input type="radio" name="rating" value="4" id="star4"><label for="star4">★</label>
+                        <input type="radio" name="rating" value="3" id="star3"><label for="star3">★</label>
+                        <input type="radio" name="rating" value="2" id="star2"><label for="star2">★</label>
+                        <input type="radio" name="rating" value="1" id="star1"><label for="star1">★</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="review-text">Your Review</label>
+                    <textarea id="review-text" rows="4" placeholder="Tell us about your experience with Ovelo..."
+                        required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Review</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Download Section -->
+    <section id="download" class="download">
+        <div class="container">
+            <h2 class="section-title">Start Understanding Your Focus</h2>
+
+            <div class="pricing-options">
+                <div class="pricing-card">
+                    <h3>Free</h3>
+                    <div class="price">$0<span>/mo</span></div>
+                    <ul class="feature-list">
+                        <li><span class="check">✓</span> Day Trace Visualization</li>
+                        <li><span class="check">✓</span> Basic Stats</li>
+                        <li><span class="check">✓</span> Roast & Calm Reflections</li>
+                        <li><span class="check">✓</span> Local Data Storage</li>
+                    </ul>
+                </div>
+                <div class="pricing-card pro">
+                    <h3>Pro</h3>
+                    <div class="price">$4.99<span>/mo</span></div>
+                    <ul class="feature-list">
+                        <li><span class="check">✓</span> Everything in Free</li>
+                        <li><span class="check">✓</span> <strong>Advanced Personas (CEO, Scientist, No BS)</strong></li>
+                        <li><span class="check">✓</span> Deep Behavioral Analysis</li>
+                        <li><span class="check">✓</span> Priority Support</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="margin-top: 2rem;">
+                <a href="#" id="download-btn-2" class="btn btn-primary btn-download"
+                    style="font-size: 1.2rem; padding: 1rem 2.5rem;">
+                    <svg class="windows-logo" viewBox="0 0 88 88" width="20" height="20">
+                        <rect x="0" y="0" width="40" height="40" fill="currentColor" />
+                        <rect x="48" y="0" width="40" height="40" fill="currentColor" />
+                        <rect x="0" y="48" width="40" height="40" fill="currentColor" />
+                        <rect x="48" y="48" width="40" height="40" fill="currentColor" />
+                    </svg>
+                    <span class="download-text">Download Ovelo</span>
+                </a>
+            </div>
+            <p class="download-note">Checking for updates...</p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container container-sm">
+            <div class="section-header">
+                <h2 class="section-title">FAQ</h2>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">What is Ovelo? <span>+</span></button>
+                    <div class="faq-answer">
+                        <p>Ovelo is a privacy-first desktop app that reads the body language of your workday — app
+                            switches, typing cadence, mouse stillness — and turns it into a simple Day Trace and
+                            reflection.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">Is Ovelo free? <span>+</span></button>
+                    <div class="faq-answer">
+                        <p>Yes, Ovelo is currently free to use.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">Why does Windows show "Unknown publisher"? <span>+</span></button>
+                    <div class="faq-answer">
+                        <p>We are a small open-source project and haven't purchased an expensive code signing
+                            certificate yet. You can click "More Info" -> "Run Anyway" to install.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">How does updates work? <span>+</span></button>
+                    <div class="faq-answer">
+                        <p>Ovelo checks for updates automatically on startup and will notify you when a new version is
+                            available.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">Where is my data stored? <span>+</span></button>
+                    <div class="faq-answer">
+                        <p>Your data is stored locally on your computer. Ovelo is local-first.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="logo">Ovelo</div>
+            <p>© 2025 Ovelo. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://github.com/senneb2002/ovelo" target="_blank">GitHub</a> •
+                <a href="mailto:support@ovelo.com">Contact Support</a>
+            </div>
+            <div class="footer-legal">
+                <a href="terms.html">Terms and Conditions</a> •
+                <a href="privacy.html">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
