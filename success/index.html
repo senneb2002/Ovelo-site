@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment Failed - Ovelo</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Payment Successful - Ovelo</title>
+    <link rel="stylesheet" href="/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         .message-container {
@@ -20,30 +20,25 @@
         .icon {
             font-size: 5rem;
             margin-bottom: 2rem;
-            animation: shake 0.5s cubic-bezier(.36, .07, .19, .97) both;
+            animation: bounce 1s ease;
         }
 
-        @keyframes shake {
+        @keyframes bounce {
 
-            10%,
-            90% {
-                transform: translate3d(-1px, 0, 0);
-            }
-
+            0%,
             20%,
-            80% {
-                transform: translate3d(2px, 0, 0);
-            }
-
-            30%,
             50%,
-            70% {
-                transform: translate3d(-4px, 0, 0);
+            80%,
+            100% {
+                transform: translateY(0);
             }
 
-            40%,
+            40% {
+                transform: translateY(-30px);
+            }
+
             60% {
-                transform: translate3d(4px, 0, 0);
+                transform: translateY(-15px);
             }
         }
     </style>
@@ -53,20 +48,19 @@
 
     <header class="navbar">
         <div class="container nav-container">
-            <a href="index.html" class="logo">
+            <a href="/" class="logo">
                 <span class="text-gradient">Ovelo</span>
             </a>
         </div>
     </header>
 
     <div class="container message-container">
-        <div class="icon">⚠️</div>
-        <h1 class="hero-title">Checkout Failed</h1>
-        <p class="hero-subtitle">Something went wrong with your transaction. Please try again.</p>
+        <div class="icon">🎉</div>
+        <h1 class="hero-title">Payment Successful!</h1>
+        <p class="hero-subtitle">Thank you for supporting Ovelo. Your transaction has been completed.</p>
 
         <div class="hero-buttons">
-            <a href="index.html" class="btn btn-secondary">Return to Home</a>
-            <a href="mailto:info@ovelolab.com" class="btn btn-primary">Contact Support</a>
+            <a href="/" class="btn btn-primary">Return to Home</a>
         </div>
     </div>
 
