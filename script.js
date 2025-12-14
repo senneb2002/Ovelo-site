@@ -52,23 +52,85 @@ document.addEventListener('DOMContentLoaded', () => {
     const REPO_NAME = 'ovelo';  // Replace with actual repo name
     const downloadBtn = document.getElementById('download-btn');
     const downloadBtn2 = document.getElementById('download-btn-2');
+    const navDownloadBtn = document.querySelector('.btn-nav[href="#download"]');
     const versionText = document.querySelector('.download-note');
 
+    // Download Modal Elements
+    const downloadModal = document.getElementById('download-modal');
+    const closeDownloadModal = document.getElementById('close-download-modal');
+    const cancelDownloadBtn = document.getElementById('cancel-download-btn');
+    const confirmDownloadBtn = document.getElementById('confirm-download-btn');
+
+    // Store download URL for modal confirmation
+    let currentDownloadUrl = 'https://github.com/senneb2002/ovelo/releases';
+
     const updateDownloadButtons = (url, version) => {
+        currentDownloadUrl = url; // Store for modal
         if (downloadBtn) {
-            downloadBtn.href = url;
+            downloadBtn.dataset.downloadUrl = url;
             const textSpan = downloadBtn.querySelector('.download-text');
             if (textSpan) textSpan.textContent = `Download ${version}`;
         }
         if (downloadBtn2) {
-            downloadBtn2.href = url;
+            downloadBtn2.dataset.downloadUrl = url;
             const textSpan2 = downloadBtn2.querySelector('.download-text');
             if (textSpan2) textSpan2.textContent = `Download ${version}`;
+        }
+        if (confirmDownloadBtn) {
+            confirmDownloadBtn.href = url;
         }
         if (versionText) {
             versionText.textContent = `${version} • Windows 10/11 • macOS coming soon`;
         }
     };
+
+    // Show download modal instead of direct download
+    const showDownloadModal = (e) => {
+        e.preventDefault();
+        if (downloadModal) {
+            downloadModal.classList.add('active');
+        }
+    };
+
+    // Attach click handlers to download buttons
+    if (downloadBtn) {
+        downloadBtn.addEventListener('click', showDownloadModal);
+    }
+    if (downloadBtn2) {
+        downloadBtn2.addEventListener('click', showDownloadModal);
+    }
+
+    // Close download modal handlers
+    if (closeDownloadModal && downloadModal) {
+        closeDownloadModal.addEventListener('click', () => {
+            downloadModal.classList.remove('active');
+        });
+    }
+
+    if (cancelDownloadBtn && downloadModal) {
+        cancelDownloadBtn.addEventListener('click', () => {
+            downloadModal.classList.remove('active');
+        });
+    }
+
+    // Close on outside click
+    if (downloadModal) {
+        downloadModal.addEventListener('click', (e) => {
+            if (e.target === downloadModal) {
+                downloadModal.classList.remove('active');
+            }
+        });
+    }
+
+    // Confirm download button - just let it follow the href
+    if (confirmDownloadBtn) {
+        confirmDownloadBtn.addEventListener('click', () => {
+            // Close modal after a brief delay to allow download to start
+            setTimeout(() => {
+                if (downloadModal) downloadModal.classList.remove('active');
+            }, 100);
+        });
+    }
 
     if (downloadBtn || downloadBtn2) {
         fetch(`https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/releases/latest`)

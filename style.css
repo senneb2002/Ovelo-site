@@ -688,6 +688,8 @@ input[id="mode-ceo"]:checked~.controls-wrapper label[for="mode-ceo"] {
   border-radius: var(--radius-md);
   max-width: 500px;
   width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
   position: relative;
   border: 1px solid rgba(255, 255, 255, 0.1);
   animation: modalSlideIn 0.3s ease;
@@ -1077,5 +1079,171 @@ input[id="mode-ceo"]:checked~.controls-wrapper label[for="mode-ceo"] {
   .btn-large {
     padding: 0.875rem 1.5rem;
     font-size: 1rem;
+  }
+}
+
+/* Download Confirmation Modal Styles */
+.download-modal-content {
+  max-width: 520px;
+  text-align: center;
+}
+
+.download-modal-header {
+  margin-bottom: 1.5rem;
+}
+
+.download-modal-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.download-modal-header h3 {
+  font-size: 1.75rem;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.download-modal-body {
+  text-align: left;
+}
+
+.download-modal-main {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+}
+
+.download-modal-main .highlight {
+  color: #2DD4BF;
+  font-weight: 600;
+}
+
+.download-modal-reason {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(129, 140, 248, 0.1);
+  border-radius: var(--radius-sm);
+  margin-bottom: 1.5rem;
+  border-left: 3px solid #818CF8;
+}
+
+.reason-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.reason-text strong {
+  color: var(--text-primary);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.reason-text p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.download-modal-steps {
+  margin-bottom: 1.5rem;
+}
+
+.steps-title {
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+}
+
+.step-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+}
+
+.step-item .step-number {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  background: var(--primary-gradient);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.step-item span:last-child {
+  color: var(--text-secondary);
+  flex: 1;
+}
+
+.step-item strong {
+  color: var(--text-primary);
+}
+
+.download-modal-trust {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 0.875rem 1rem;
+  background: rgba(45, 212, 191, 0.08);
+  border-radius: var(--radius-sm);
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.trust-item-modal {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.trust-item-modal span {
+  font-size: 1rem;
+}
+
+.download-modal-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.download-confirm-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1.25rem 2.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  width: 100%;
+}
+
+@media (max-width: 480px) {
+  .download-modal-trust {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .download-modal-content {
+    padding: 1.5rem;
+  }
+
+  .download-confirm-btn {
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
   }
 }
